@@ -1,1 +1,20 @@
 test
+
+
+local function debug (tTable)
+	for i=1,#tTable do
+	  print(i .. ": " .. tTable[i])
+	end
+end
+
+local file = fs.open("/test","w")
+local line = ""
+
+line = file.readLine()
+print(line)
+file.close()
+
+file = fs.open("/test","r")
+
+debug(file)
+file.close()
